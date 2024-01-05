@@ -1,16 +1,16 @@
 <template>
-    <div class="search-header">
-        <input type="text" name="search-input" placeholder="Search for a game..." v-model="gameName"/>
-        <button @click="search">Search</button>
+    <div class="flex mx-auto mt-0 mb-5 w-fit">
+        <input type="text" name="search-input" placeholder="Search for a game..." v-model="gameName" class="px-4 py-.5 text-lg rounded-full border-slate-400 border-2"/>
+        <button @click="search" v-bind:disabled="!gameName" class="bg-slate-100 hover:bg-white border-2 py-.5 px-2 rounded border-slate-400 font-semibold mx-2">Search</button>
     </div>
     <div v-if="isLoading" class="loading-container">
         <span class="loading">Loading...</span>
     </div>
     <div v-else-if="searchResults.length" class="search-results">
-        <div class="pagination">
+        <div class="mb-2">
             <span>Showing {{ offset + 1 }} - {{ offset + searchResults.length }} of {{ totalResults }}</span>
-            <button v-if="offset > 0" class="next-button" @click="previousPage">Previous</button>
-            <button v-if="searchResults.length + offset < totalResults" class="previous-button" @click="nextPage">Next</button>
+            <button v-if="offset > 0" class="bg-slate-100 hover:bg-white border-2 py-.5 px-2 rounded border-slate-400 font-semibold mx-2" @click="previousPage">Previous</button>
+            <button v-if="searchResults.length + offset < totalResults" class="bg-slate-100 hover:bg-white border-2 py-.5 px-2 rounded border-slate-400 font-semibold mx-2" @click="nextPage">Next</button>
         </div>
         
         <GameList :games="searchResults"></GameList>
@@ -93,20 +93,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-.search-header {
-    display: flex;
-    margin: 0 auto 30px;
-    width: fit-content;
-}
-input[name="search-input"] {
-    font-size: 16px;
-    padding: 5px 10px;
-    border-radius: 10px;
-    border-color: #38b3e7;
-}
-.pagination {
-    margin-bottom: 20px;
-}
-</style>

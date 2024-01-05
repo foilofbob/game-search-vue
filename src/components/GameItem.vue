@@ -1,13 +1,13 @@
 <template>
-    <img :src="game.image.icon_url"/>
-    <div class="title-container">
-        <span class="game-title">{{ game.name }}</span>
-        <button class="toggle-game-button" @click="toggleSelectGame(game)">
-            <span v-if="isSelected(game)">Remove from cart</span>
-            <span v-else>Add to cart</span>
+    <img :src="game.image.icon_url" class="absolute mr-3"/>
+    <div class="flex flex-row justify-between ml-24">
+        <span class="text-lg font-semibold max-w-md">{{ game.name }}</span>
+        <button class="bg-slate-100 hover:bg-white border-2 py-.5 px-2 rounded border-slate-400 font-semibold mx-2 h-7" @click="toggleSelectGame(game)">
+            <span v-if="isSelected(game)" class="font-semibold">Remove from cart</span>
+            <span v-else class="font-semibold">Add to cart</span>
         </button>
     </div>
-    <span class="game-desc">{{ game.deck }}</span>
+    <span class="block ml-24">{{ game.deck }}</span>
 </template>
 
 <script setup>

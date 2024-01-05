@@ -4,11 +4,11 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <div class="wrapper">
-      <h1>Giant Bomb Game Repository</h1>
-      <nav>
-        <RouterLink to="/">Search</RouterLink>
-        <RouterLink to="/cart">Cart</RouterLink>
+    <div class="my-4 mx-auto">
+      <h1 class="text-2xl text-center">Giant Bomb Game Repository</h1>
+      <nav class="w-full text-baase text-center py-4 divide-x divide-slate-300">
+        <RouterLink to="/" class="inline text-lg py-0 px-4 hover:ring hover:ring-slate-200 border-none">Search</RouterLink>
+        <RouterLink to="/cart" class="inline text-lg py-0 px-4 hover:ring hover:ring-slate-200">Cart</RouterLink>
       </nav>
     </div>
   </header>
@@ -17,40 +17,7 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
-header {
-  display: flex;
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-header .wrapper {
-  display: flex;
-  flex-direction: column;
-  margin: 20px auto;
-}
-
-nav {
-  width: 100%;
-  font-size: 1rem;
-  text-align: center;
-  padding: 1rem 0;
-}
-
 nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
+  text-decoration: underline;
 }
 </style>

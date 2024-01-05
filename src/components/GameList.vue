@@ -1,5 +1,5 @@
 <template>
-    <div v-for="(game) in games" :key="game.id" class="game-container">
+    <div v-for="(game) in games" :key="game.id" class="my-3 mx-0 p-2 border border-sky-300 min-h-24">
         <GameItem :game="game"></GameItem>
     </div>
 </template>
@@ -18,36 +18,25 @@ export default {
 </script>
 
 <style>
-.game-container {
-    margin: 15px 0;
-    padding: 10px;
-    background-color: #f9f9ff;
-    min-height: 100px;
-    border: 1px solid #e0e0ff;
 
-    img {
-        margin-right: 10px;
-        position: absolute;
-    }
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 90px;
+}
 
-    .title-container {
-        display: flex;
-        justify-content: space-between;
-        margin-left: 90px;
-    }
+.game-title {
+    font-size: 16px;
+    font-weight: bold;
+}
 
-    .game-title {
-        font-size: 16px;
-        font-weight: bold;
-    }
+.game-desc {
+    display: block;
+    margin-left: 90px;
+}
 
-    .toggle-game-button {
-        
-    }
-
-    .game-desc {
-        display: block;
-        margin-left: 90px;
-    }
+.game-container img {
+    margin-right: 10px;
+    position: absolute;
 }
 </style>

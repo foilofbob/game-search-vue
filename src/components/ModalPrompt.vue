@@ -1,29 +1,29 @@
 <template>
   <transition name="modal-fade">
     <div class="modal-backdrop">
-      <div class="modal">
-        <header class="modal-header">
+      <div class="modal w-1/4 bg-white flex flex-col divide-y divide-solid">
+        <header class="relative p-4">
           <slot name="header">
             This is the default title!
           </slot>
-          <button type="button" class="btn-close" @click="close">
+          <button type="button" class="text-slate-300 absolute top-0 right-2 text-base" @click="close">
             x
           </button>
         </header>
 
-        <section class="modal-body">
+        <section class="p-4">
           <slot name="body">
             This is the default body!
           </slot>
         </section>
 
-        <footer class="modal-footer">
-          <slot name="footer">
-            This is the default footer!
-          </slot>
-          <button type="button" class="btn-green" @click="close">
+        <footer class="flex justify-between p-3">
+          <button type="button" class="text-slate-400 hover:text-sky-400 py-.5 px-2 font-semibold" @click="close">
             Cancel
           </button>
+          <slot name="footer-button">
+            This is the default footer!
+          </slot>
         </footer>
       </div>
     </div>
@@ -52,58 +52,6 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  .modal {
-    background: #FFFFFF;
-    box-shadow: 2px 2px 20px 1px;
-    overflow-x: auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .modal-header,
-  .modal-footer {
-    padding: 15px;
-    display: flex;
-  }
-
-  .modal-header {
-    position: relative;
-    border-bottom: 1px solid #eeeeee;
-    color: #4AAE9B;
-    justify-content: space-between;
-  }
-
-  .modal-footer {
-    border-top: 1px solid #eeeeee;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-
-  .modal-body {
-    position: relative;
-    padding: 20px 10px;
-  }
-
-  .btn-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: none;
-    font-size: 20px;
-    padding: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    color: #4AAE9B;
-    background: transparent;
-  }
-
-  .btn-green {
-    color: white;
-    background: #4AAE9B;
-    border: 1px solid #4AAE9B;
-    border-radius: 2px;
   }
 
   .modal-fade-enter,
